@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Carrito | Aqua Amazonas</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Tu carrito de compra en Aqua Amazonas. Revisa tus productos y finaliza tu pedido.">
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Skip to content: accesibilidad con tabulador -->
+        <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+        <!--Header-->
+        <header class="header">
+            <div class="header__container">
+                <div class="parent">
+                    <div class="div1">
+                        <div class="header_brand">
+                            <img id="logoPrincipal" src="img/logo2.svg" alt="Logo Peces Disco" class="header__logo">
+                        </div>
+                    </div>
+                    <div class="div2">
+                        <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                        </button>
+                        <nav class="header__nav" aria-label="Navegación principal">
+                            <a href="index.html">Inicio</a>
+                            <a href="coleccion.html">Colección</a>
+                            <a href="informacion.html">Información</a>
+                            <div class="nav-icons-mobile">
+                                <button class="divIconos" aria-label="Buscar">
+                                    <img src="img/lupa.svg" alt="" class="header__icon">
+                                </button>
+                                <button class="divIconos" aria-label="Ver carrito">
+                                    <img src="img/carrito.svg" alt="" class="header__icon">
+                                </button>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="div3">
+                        <div class="header__actions">
+                            <button class="divIconos" aria-label="Buscar">
+                                <img src="img/lupa.svg" alt="" class="header__icon">
+                            </button>
+                            <button class="divIconos" aria-label="Ver carrito">
+                                <img src="img/carrito.svg" alt="" class="header__icon">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!--Contenido principal-->
+        <main class="main" id="contenido-principal">
+            <section class="carrito-section">
+                <h1>Tu carrito</h1>
+                <div class="carrito-container">
+                    <!-- Items: renderizado por cart-ui.js -->
+                    <div class="carrito-items" id="carritoItems">
+                        <p class="carrito-loading">Cargando...</p>
+                    </div>
+                    <!-- Resumen del pedido: renderizado por cart-ui.js -->
+                    <aside class="carrito-resumen" id="carritoResumen"></aside>
+                </div>
+            </section>
+        </main>
+
+        <!--Footer-->
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="parentFooter">
+                    <div class="div1f">
+                        <div class="footer__col">
+                            <h3 class="footer__title">Contacto</h3>
+                            <p>info@aquaamazonas.com</p>
+                            <p>+34 678 901 234</p>
+                        </div>
+                    </div>
+                    <div class="div2f">
+                        <div class="footer__col footer__center">
+                            <div class="footer__social">
+                                <a href="#" aria-label="Instagram">
+                                    <img src="img/instagram.svg" alt="" class="footer__icon">
+                                </a>
+                                <a href="#" aria-label="Facebook">
+                                    <img src="img/facebook.svg" alt="" class="footer__icon">
+                                </a>
+                                <a href="#" aria-label="Twitter">
+                                    <img src="img/twitter.svg" alt="" class="footer__icon">
+                                </a>
+                            </div>
+                            <p class="footer__copy">© 2025 Aqua Amazonas</p>
+                        </div>
+                    </div>
+                    <div class="div3f">
+                        <div class="footer__col footer__right">
+                            <h3 class="footer__title">Sobre Nosotros</h3>
+                            <a href="informacion.html">Nuestro equipo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/main.js"></script>
+        <script type="module" src="js/cart-ui.js"></script>
+
+    </body>
+
+</html>

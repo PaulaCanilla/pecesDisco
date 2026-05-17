@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Búsqueda de Peces Disco | Aqua Amazonas</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Busca peces disco en nuestra colección. Filtra por nombre o variedad.">
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Skip to content: accesibilidad con tabulador -->
+        <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+        <!--Header-->
+        <header class="header">
+            <div class="header__container">
+                <div class="parent">
+                    <div class="div1">
+                        <!--Logo y marca-->
+                        <div class="header_brand">
+                            <img id="logoPrincipal" src="img/logo2.svg" alt="Logo Peces Disco" class="header__logo">
+                        </div>
+                    </div>
+                    <div class="div2">
+                        <!--Botón hamburguesa (visible solo en móvil)-->
+                        <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                        </button>
+                        <!--Navegación-->
+                        <nav class="header__nav" aria-label="Navegación principal">
+                            <a href="index.html">Inicio</a>
+                            <a href="coleccion.html">Colección</a>
+                            <a href="informacion.html">Información</a>
+                            <!--Iconos integrados en menú móvil-->
+                            <div class="nav-icons-mobile">
+                                <button class="divIconos" aria-label="Buscar">
+                                    <img src="img/lupa.svg" alt="" class="header__icon">
+                                </button>
+                                <button class="divIconos" aria-label="Ver carrito">
+                                    <img src="img/carrito.svg" alt="" class="header__icon">
+                                </button>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="div3">
+                        <!--Iconos-->
+                        <div class="header__actions">
+                            <button class="divIconos" aria-label="Buscar">
+                                <img src="img/lupa.svg" alt="" class="header__icon">
+                            </button>
+                            <button class="divIconos" aria-label="Ver carrito">
+                                <img src="img/carrito.svg" alt="" class="header__icon">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!--Contenido principal-->
+        <main class="main" id="contenido-principal">
+
+            <section class="busqueda-section" aria-labelledby="busqueda-titulo">
+                <h1 id="busqueda-titulo">Buscar peces</h1>
+
+                <!-- Formulario de búsqueda -->
+                <form class="busqueda-form" role="search" onsubmit="return false;">
+                    <label for="campoBusqueda" class="seo-titulo-oculto">Buscar por nombre de pez</label>
+                    <input
+                        type="search"
+                        id="campoBusqueda"
+                        class="busqueda-input"
+                        placeholder="Escribe el nombre de un pez..."
+                        autocomplete="off"
+                        aria-controls="resultados"
+                        aria-label="Buscar peces disco"
+                        autofocus
+                    >
+                </form>
+
+                <!-- Resultados -->
+                <div id="resultados" class="busqueda-resultados" aria-live="polite" aria-label="Resultados de búsqueda">
+                    <!-- Las tarjetas se generan con JS -->
+                </div>
+                <p class="busqueda-sin-resultados" id="sinResultados" role="status">
+                    No se encontraron peces con ese nombre.
+                </p>
+            </section>
+
+        </main>
+
+        <!--Footer-->
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="parentFooter">
+                    <div class="div1f">
+                        <!--Primera columna-->
+                        <div class="footer__col">
+                            <h3 class="footer__title">Contacto</h3>
+                            <p>info@aquaamazonas.com</p>
+                            <p>+34 678 901 234</p>
+                        </div>
+                    </div>
+                    <div class="div2f">
+                        <!--Segunda columna-->
+                        <div class="footer__col footer__center">
+                            <div class="footer__social">
+                                <a href="#" aria-label="Instagram">
+                                    <img src="img/instagram.svg" alt="" class="footer__icon">
+                                </a>
+                                <a href="#" aria-label="Facebook">
+                                    <img src="img/facebook.svg" alt="" class="footer__icon">
+                                </a>
+                                <a href="#" aria-label="Twitter">
+                                    <img src="img/twitter.svg" alt="" class="footer__icon">
+                                </a>
+                            </div>
+                            <p class="footer__copy">© 2025 Aqua Amazonas</p>
+                        </div>
+                    </div>
+                    <div class="div3f">
+                        <!--Tercera columna-->
+                        <div class="footer__col footer__right">
+                            <h3 class="footer__title">Sobre Nosotros</h3>
+                            <a href="informacion.html">Nuestro equipo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/main.js"></script>
+        <script type="module" src="js/cart-ui.js"></script>
+        <script>
+            // =============================================
+            // Catálogo de peces (fuente de datos)
+            // =============================================
+            const catalogo = [
+                { nombre: "Disco Rojo",         img: "img/disco_rojo.png",                 url: "compra.html" },
+                { nombre: "Disco Azul",          img: "img/disco_azul.png",                 url: "compra.html" },
+                { nombre: "Disco Verde",         img: "img/disco_verde.png",                url: "compra.html" },
+                { nombre: "Marlboro Red",        img: "img/red_marlboro_medium.png",        url: "compra.html" },
+                { nombre: "Cover Red",           img: "img/red_cover_medium.png",           url: "compra.html" },
+                { nombre: "Melon Red",           img: "img/red_melon_medium.png",           url: "compra.html" },
+                { nombre: "Snake Skin Red",      img: "img/disco_rojo_medium.png",          url: "compra.html" },
+                { nombre: "Alenquer Híbrido",    img: "img/red_alenquer_hibrido_medium.png",url: "compra.html" },
+            ];
+
+            const contenedor   = document.getElementById('resultados');
+            const sinResultados = document.getElementById('sinResultados');
+            const input        = document.getElementById('campoBusqueda');
+
+            // Renderiza todas las tarjetas al inicio
+            function renderizarTarjetas(lista) {
+                contenedor.innerHTML = '';
+
+                if (lista.length === 0) {
+                    sinResultados.style.display = 'block';
+                    return;
+                }
+                sinResultados.style.display = 'none';
+
+                lista.forEach(pez => {
+                    const a = document.createElement('a');
+                    a.href = pez.url;
+                    a.className = 'busqueda-card';
+                    a.setAttribute('tabindex', '0');
+
+                    const img = document.createElement('img');
+                    img.src = pez.img;
+                    img.alt = pez.nombre;
+                    img.loading = 'lazy';
+                    img.width = 140;
+                    img.height = 140;
+
+                    const p = document.createElement('p');
+                    p.textContent = pez.nombre;
+
+                    a.appendChild(img);
+                    a.appendChild(p);
+                    contenedor.appendChild(a);
+                });
+            }
+
+            // Filtrar en tiempo real mientras se escribe
+            input.addEventListener('input', () => {
+                const texto = input.value.trim().toLowerCase();
+                const filtrado = catalogo.filter(p =>
+                    p.nombre.toLowerCase().includes(texto)
+                );
+                renderizarTarjetas(filtrado);
+            });
+
+            // Mostrar todo al cargar
+            renderizarTarjetas(catalogo);
+        </script>
+    </body>
+
+</html>
